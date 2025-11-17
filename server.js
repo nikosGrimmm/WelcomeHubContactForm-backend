@@ -10,15 +10,6 @@ const port = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 
-const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,    
-    port: process.env.SMTP_PORT,
-    secure: process.env.SMTP_SECURE === 'true',
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-    }
-});
 
 app.post("/api/send-email", async (req, res) => {
     try{
