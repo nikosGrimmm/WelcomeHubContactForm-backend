@@ -35,7 +35,7 @@ app.post("/api/send-email", async (req, res) => {
             + `Email: ${email}\n\n`
             + `Message:\n${message}`;
 
-            const response = await fecth("https://api.resend.com/emails", {
+            const response = await fetch("https://api.resend.com/emails", {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${apiKey}`,
